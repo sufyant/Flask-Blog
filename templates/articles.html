@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h3>Yazılar</h3>
+    <hr>
+    {% if articles %}
+        <form action="/search" method="post">
+            <input  type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Ara..." />
+            <button type="submit" class="btn btn-danger">Ara</button>
+        </form>
+        <hr>
+        <ul class="list-group">
+            {% for article in articles %}
+                <a href="/article/{{ article.id }}" class="list-group-item list-group-item-action">{{ article["title"] }}</a>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-danger"> Bu blogda henüz makale bulunmuyor...</div>
+    {% endif %}
+{% endblock %}
