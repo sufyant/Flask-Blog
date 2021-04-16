@@ -17,7 +17,7 @@
    app.config["MYSQL_PASSWORD"]     = <password>
    app.config["MYSQL_DB"]           = <database_name>
    ```
-3. Run app.py
+4. Run app.py
     ```
    python app.py
     ```
